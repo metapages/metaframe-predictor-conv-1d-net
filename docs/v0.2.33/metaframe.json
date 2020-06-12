@@ -1,0 +1,29 @@
+{
+	"version": "0.4.3",
+	"metadata": {
+		"version": "0.1",
+		"title": "Tensorflow 1D convolutional net trainer"
+    },
+    "inputs": {
+		"training": {
+			"type": "./types/TrainingDataSet"
+		},
+		"prediction": {
+			"type": "./types/PredictionInputEncoded"
+		},
+		"model": {
+			"type": "./types/PersistedModelJson"
+		}
+	},
+    "outputs": {
+		"model": {
+			"type": "./types/PersistedModelJson"
+		},
+		"prediction": {
+			"type": "./types/PredictionResult"
+		},
+		"error": {
+			"type": "json"
+		}
+	}
+}

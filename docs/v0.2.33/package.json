@@ -1,0 +1,49 @@
+{
+  "name": "metaframe-predictor-conv-1d-net",
+  "version": "0.2.33",
+  "description": "",
+  "scripts": {
+    "fook": "npm run build-server && node server.js",
+    "start": "npm run clean && npm run build && node server.js",
+    "build": "npm run build-server && npm run build-client",
+    "build-server": "./node_modules/typescript/bin/tsc -p tsconfig-server.json",
+    "build-client": "./node_modules/typescript/bin/tsc -p tsconfig-browser.json && rm -rf public/* && ./node_modules/parcel-bundler/bin/cli.js build --out-dir public index.html && cp -r src/* public/",
+    "clean": "rm -rf server.js* && rm -rf dist/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.7.4",
+    "@tensorflow/tfjs-vis": "^1.4.0",
+    "base64-arraybuffer": "^0.2.0",
+    "fastify": "^2.14.1",
+    "fastify-blipp": "^2.3.1",
+    "fastify-cors": "^3.0.3",
+    "fastify-static": "^2.7.0",
+    "http-server": "^0.12.1",
+    "metaframe": "^0.4.102",
+    "minimatch": "^3.0.4",
+    "object-hash": "^2.0.3",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-html-externals": "^0.2.0",
+    "typescript": "^3.8.3",
+    "vega": "^5.11.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "staticFiles": {
+    "staticPath": "src/static",
+    "watcherGlob": "*",
+    "excludeGlob": [
+      "types/*",
+      "*.ts",
+      "README.md"
+    ]
+  },
+  "types": "lib.d.ts",
+  "main": "lib.js",
+  "devDependencies": {
+    "parcel-plugin-static-files-copy": "^2.3.1"
+  }
+}

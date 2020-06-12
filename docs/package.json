@@ -1,6 +1,6 @@
 {
   "name": "metaframe-predictor-conv-1d-net",
-  "version": "0.2.29",
+  "version": "0.2.33",
   "description": "",
   "scripts": {
     "fook": "npm run build-server && node server.js",
@@ -8,7 +8,7 @@
     "build": "npm run build-server && npm run build-client",
     "build-server": "./node_modules/typescript/bin/tsc -p tsconfig-server.json",
     "build-client": "./node_modules/typescript/bin/tsc -p tsconfig-browser.json && rm -rf public/* && ./node_modules/parcel-bundler/bin/cli.js build --out-dir public index.html && cp -r src/* public/",
-    "clean": "rm -rf server.js* && rm -rf public"
+    "clean": "rm -rf server.js* && rm -rf dist/*"
   },
   "author": "",
   "license": "ISC",
